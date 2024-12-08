@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questionnaire : Gestion du Temps</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #1c1c1c;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .module {
+            background-color: #333;
+            color: #fff;
+            border-radius: 10px;
+            padding: 30px;
+            max-width: 800px;
+            width: 100%;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            margin: 20px;
+        }
+        h2 {
+            color: #ffffff;
+            font-size: 26px;
+            text-align: center;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            border-bottom: 3px solid #ffffff;
+            padding-bottom: 10px;
+            letter-spacing: 2px;
+        }
+        label {
+            font-size: 16px;
+            color: #ffffff;
+            margin-bottom: 10px;
+            display: block;
+        }
+        input[type="text"], input[type="email"], input[type="range"], select, textarea {
+            width: 100%;
+            padding: 12px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: 1px solid #666;
+            background-color: #444;
+            color: #fff;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+        input[type="radio"], input[type="checkbox"] {
+            margin-right: 10px;
+        }
+        input[type="submit"] {
+            background-color: #000;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 20px;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        input[type="submit"]:hover {
+            background-color: #444;
+        }
+        .question {
+            margin-bottom: 25px;
+        }
+        .checkbox-group, .radio-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .checkbox-group input[type="checkbox"], .radio-group input[type="radio"] {
+            margin-right: 10px;
+            margin-top: 0;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #aaa;
+        }
+        .range-label {
+            display: flex;
+            justify-content: space-between;
+            margin-top: -10px;
+            font-size: 14px;
+            color: #ccc;
+        }
+        .range-value {
+            margin-top: 10px;
+            font-size: 18px;
+            color: #fff;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="module">
+        <h2>Questionnaire : Gestion du Temps</h2>
+        <form action="https://formspree.io/f/xblrnjqo" method="POST">
+
+<!-- Champ caché pour envoyer le nom du module et son numéro -->
+<input type="hidden" name="module" value="Module 1 : Gestion du Temps">
+
+            <!-- Section Nom -->
+            <div class="question">
+                <label for="name">Nom :</label>
+                <input type="text" id="name" name="name" placeholder="Entrez votre nom" required>
+            </div>
+
+            <!-- Question 1 -->
+            <div class="question">
+                <label for="q1">1. Comment gérez-vous actuellement votre emploi du temps ?</label>
+                <textarea id="q1" name="q1" rows="4" cols="50" placeholder="Expliquez comment vous organisez votre emploi du temps..."></textarea>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="question">
+                <label for="q2">2. Utilisez-vous un outil pour planifier vos journées ? (Agenda, application, etc.)</label>
+                <div class="radio-group">
+                    <input type="radio" id="q2_1" name="q2" value="Oui">
+                    <label for="q2_1">Oui</label>
+                </div>
+                <div class="radio-group">
+                    <input type="radio" id="q2_2" name="q2" value="Non">
+                    <label for="q2_2">Non</label>
+                </div>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="question">
+                <label for="q3">3. Quels outils utilisez-vous pour organiser vos journées ? (Cochez toutes les options pertinentes)</label>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="q3_1" name="q3" value="Agenda papier">
+                    <label for="q3_1">Agenda papier</label>
+                </div>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="q3_2" name="q3" value="Agenda numérique">
+                    <label for="q3_2">Agenda numérique (Google Calendar, Outlook, etc.)</label>
+                </div>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="q3_3" name="q3" value="Applications de gestion de tâches">
+                    <label for="q3_3">Applications de gestion de tâches (Trello, Asana, etc.)</label>
+                </div>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="q3_4" name="q3" value="Aucun outil">
+                    <label for="q3_4">Aucun outil</label>
+                </div>
+            </div>
+
+            <!-- Question 4 -->
+            <div class="question">
+                <label for="q4">4. À quel point vous sentez-vous organisé(e) sur une échelle de 1 à 10 ?</label>
+                <input type="range" id="q4" name="q4" min="1" max="10" value="5" step="1" oninput="updateRangeValue(this.value)">
+                <div class="range-value">Niveau : <span id="rangeOutput">5</span></div>
+            </div>
+
+            <!-- Question 5 -->
+            <div class="question">
+                <label for="q5">5. Quelles sont les principales sources de distraction qui vous empêchent de suivre votre emploi du temps ?</label>
+                <textarea id="q5" name="q5" rows="4" cols="50" placeholder="Listez vos sources de distraction..."></textarea>
+            </div>
+
+            <!-- Question 6 -->
+            <div class="question">
+                <label for="q6">6. Avez-vous des routines quotidiennes pour rester concentré(e) ?</label>
+                <div class="radio-group">
+                    <input type="radio" id="q6_1" name="q6" value="Oui">
+                    <label for="q6_1">Oui</label>
+                </div>
+                <div class="radio-group">
+                    <input type="radio" id="q6_2" name="q6" value="Non">
+                    <label for="q6_2">Non</label>
+                </div>
+            </div>
+
+            <!-- Question 7 -->
+            <div class="question">
+                <label for="q7">7. Combien d'heures en moyenne travaillez-vous par jour ?</label>
+                <select id="q7" name="q7">
+                    <option value="Moins de 4 heures">Moins de 4 heures</option>
+                    <option value="4 à 6 heures">4 à 6 heures</option>
+                    <option value="6 à 8 heures">6 à 8 heures</option>
+                    <option value="Plus de 8 heures">Plus de 8 heures</option>
+                </select>
+            </div>
+
+            <!-- Question 8 -->
+            <div class="question">
+                <label for="q8">8. Comment priorisez-vous vos tâches chaque jour ?</label>
+                <textarea id="q8" name="q8" rows="4" cols="50" placeholder="Décrivez comment vous priorisez vos tâches..."></textarea>
+            </div>
+
+            <!-- Question 9 -->
+            <div class="question">
+                <label for="q9">9. Avez-vous des moments de pause programmés dans votre emploi du temps ?</label>
+                <div class="radio-group">
+                    <input type="radio" id="q9_1" name="q9" value="Oui">
+                    <label for="q9_1">Oui</label>
+                </div>
+                <div class="radio-group">
+                    <input type="radio" id="q9_2" name="q9" value="Non">
+                    <label for="q9_2">Non</label>
+                </div>
+            </div>
+
+            <!-- Question 10 -->
+            <div class="question">
+                <label for="q10">10. Quelles améliorations aimeriez-vous apporter à votre gestion du temps ?</label>
+                <textarea id="q10" name="q10" rows="4" cols="50" placeholder="Décrivez les améliorations souhaitées..."></textarea>
+            </div>
+
+            <input type="submit" value="Soumettre" class="submit-btn">
+        </form>
+    </div>
+
+        <div class="footer">
+            <p>Gestion Élite</p>
+        </div>
+    </div>
+
+    <script>
+        function updateRangeValue(value) {
+            document.getElementById('rangeOutput').innerText = value;
+        }
+    </script>
+
+</body>
+</html>
+

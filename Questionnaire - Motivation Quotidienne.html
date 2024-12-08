@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questionnaire : Motivation Quotidienne</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #1c1c1c;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .module {
+            background-color: #333;
+            color: #fff;
+            border-radius: 10px;
+            padding: 30px;
+            max-width: 800px;
+            width: 100%;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            margin: 20px;
+        }
+        h2 {
+            color: #ffffff;
+            font-size: 26px;
+            text-align: center;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            border-bottom: 3px solid #ffffff;
+            padding-bottom: 10px;
+            letter-spacing: 2px;
+        }
+        label {
+            font-size: 16px;
+            color: #ffffff;
+            margin-bottom: 10px;
+            display: block;
+        }
+        input[type="text"], input[type="email"], input[type="range"], select, textarea {
+            width: 100%;
+            padding: 12px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: 1px solid #666;
+            background-color: #444;
+            color: #fff;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+        input[type="radio"], input[type="checkbox"] {
+            margin-right: 10px;
+        }
+        input[type="submit"] {
+            background-color: #000;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 20px;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        input[type="submit"]:hover {
+            background-color: #444;
+        }
+        .question {
+            margin-bottom: 25px;
+        }
+        .checkbox-group, .radio-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .checkbox-group input[type="checkbox"], .radio-group input[type="radio"] {
+            margin-right: 10px;
+            margin-top: 0;
+        }
+        .range-value {
+            margin-top: 10px;
+            font-size: 18px;
+            color: #fff;
+            text-align: center;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #aaa;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="module">
+        <h2>Questionnaire : Motivation Quotidienne</h2>
+        <form action="https://formspree.io/f/xblrnjqo" method="POST">
+
+<!-- Champ caché pour envoyer le nom du module et son numéro -->
+<input type="hidden" name="module" value="Module 1 : Motivation Quotidienne">
+
+            <!-- Section Nom -->
+            <div class="question">
+                <label for="name">Nom :</label>
+                <input type="text" id="name" name="name" placeholder="Entrez votre nom" required>
+            </div>
+
+            <!-- Question 1 -->
+            <div class="question">
+                <label for="q1">1. Sur une échelle de 1 à 10, comment évalueriez-vous votre niveau de motivation quotidien ?</label>
+                <input type="range" id="q1" name="q1" min="1" max="10" value="5" step="1" oninput="updateRangeValue(this.value)">
+                <div class="range-value">Niveau de motivation : <span id="rangeOutput">5</span></div>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="question">
+                <label for="q2">2. Qu'est-ce qui influence le plus votre motivation chaque jour ?</label>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="q2_1" name="q2" value="Objectifs clairs">
+                    <label for="q2_1">Objectifs clairs</label>
+                </div>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="q2_2" name="q2" value="Reconnaissance">
+                    <label for="q2_2">Reconnaissance de mon travail</label>
+                </div>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="q2_3" name="q2" value="Ambiance de travail">
+                    <label for="q2_3">Ambiance de travail</label>
+                </div>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="q2_4" name="q2" value="Équilibre vie professionnelle/personnelle">
+                    <label for="q2_4">Équilibre vie professionnelle et personnelle</label>
+                </div>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="q2_5" name="q2" value="Autres">
+                    <label for="q2_5">Autres</label>
+                </div>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="question">
+                <label for="q3">3. Avez-vous des routines ou habitudes qui vous aident à rester motivé(e) ?</label>
+                <textarea id="q3" name="q3" rows="4" cols="50" placeholder="Décrivez vos routines..."></textarea>
+            </div>
+
+            <!-- Question 4 -->
+            <div class="question">
+                <label for="q4">4. À quel point la procrastination affecte-t-elle votre motivation ?</label>
+                <div class="radio-group">
+                    <input type="radio" id="q4_1" name="q4" value="Très peu">
+                    <label for="q4_1">Très peu</label>
+                </div>
+                <div class="radio-group">
+                    <input type="radio" id="q4_2" name="q4" value="Modérément">
+                    <label for="q4_2">Modérément</label>
+                </div>
+                <div class="radio-group">
+                    <input type="radio" id="q4_3" name="q4" value="Beaucoup">
+                    <label for="q4_3">Beaucoup</label>
+                </div>
+            </div>
+
+            <!-- Question 5 -->
+            <div class="question">
+                <label for="q5">5. Quel est le moment de la journée où vous vous sentez le plus motivé(e) ?</label>
+                <select id="q5" name="q5">
+                    <option value="Matin">Matin</option>
+                    <option value="Après-midi">Après-midi</option>
+                    <option value="Soir">Soir</option>
+                    <option value="Nuit">Nuit</option>
+                </select>
+            </div>
+
+            <!-- Question 6 -->
+            <div class="question">
+                <label for="q6">6. Quelle est la première chose que vous faites lorsque vous vous sentez démotivé(e) ?</label>
+                <textarea id="q6" name="q6" rows="4" cols="50" placeholder="Décrivez votre première action..."></textarea>
+            </div>
+
+            <!-- Question 7 -->
+            <div class="question">
+                <label for="q7">7. Utilisez-vous des outils spécifiques (comme des applications) pour améliorer votre motivation ?</label>
+                <div class="radio-group">
+                    <input type="radio" id="q7_1" name="q7" value="Oui">
+                    <label for="q7_1">Oui</label>
+                </div>
+                <div class="radio-group">
+                    <input type="radio" id="q7_2" name="q7" value="Non">
+                    <label for="q7_2">Non</label>
+                </div>
+            </div>
+
+            <!-- Question 8 -->
+            <div class="question">
+                <label for="q8">8. Si vous avez répondu "Oui", quels outils utilisez-vous pour booster votre motivation ?</label>
+                <textarea id="q8" name="q8" rows="4" cols="50" placeholder="Nommez vos outils..."></textarea>
+            </div>
+
+            <!-- Question 9 -->
+            <div class="question">
+                <label for="q9">9. Combien de temps estimez-vous passer à accomplir vos tâches les plus importantes chaque jour ?</label>
+                <div class="radio-group">
+                    <input type="radio" id="q9_1" name="q9" value="Moins de 2 heures">
+                    <label for="q9_1">Moins de 2 heures</label>
+                </div>
+                <div class="radio-group">
+                    <input type="radio" id="q9_2" name="q9" value="2 à 4 heures">
+                    <label for="q9_2">2 à 4 heures</label>
+                </div>
+                <div class="radio-group">
+                    <input type="radio" id="q9_3" name="q9" value="4 à 6 heures">
+                    <label for="q9_3">4 à 6 heures</label>
+                </div>
+                <div class="radio-group">
+                    <input type="radio" id="q9_4" name="q9" value="Plus de 6 heures">
+                    <label for="q9_4">Plus de 6 heures</label>
+                </div>
+            </div>
+
+            <!-- Question 10 -->
+            <div class="question">
+                <label for="q10">10. Quelles actions aimeriez-vous entreprendre pour améliorer votre motivation quotidienne ?</label>
+                <textarea id="q10" name="q10" rows="4" cols="50" placeholder="Décrivez vos actions..."></textarea>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="submit-button">
+                <input type="submit" value="Soumettre">
+            </div>
+
+        </form>
+
+        <div class="footer">
+            <p>Gestion Élite</p>
+        </div>
+    </div>
+
+    <script>
+        function updateRangeValue(value) {
+            document.getElementById('rangeOutput').innerText = value;
+        }
+    </script>
+
+</body>
+</html>
+

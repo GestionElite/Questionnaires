@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questionnaire : Sources de distraction</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #1c1c1c;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .module {
+            background-color: #333;
+            color: #fff;
+            border-radius: 10px;
+            padding: 30px;
+            max-width: 800px;
+            width: 100%;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            margin: 20px;
+        }
+        h2 {
+            color: #ffffff;
+            font-size: 26px;
+            text-align: center;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            border-bottom: 3px solid #ffffff;
+            padding-bottom: 10px;
+            letter-spacing: 2px;
+        }
+        label {
+            font-size: 16px;
+            color: #ffffff;
+            margin-bottom: 10px;
+            display: block;
+        }
+        input[type="text"], input[type="range"], select, textarea {
+            width: 100%;
+            padding: 12px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: 1px solid #999;
+            background-color: #444;
+            color: #fff;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+        input[type="radio"], input[type="checkbox"] {
+            margin-right: 10px;
+        }
+        input[type="submit"] {
+            background-color: #000;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 20px;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        input[type="submit"]:hover {
+            background-color: #444;
+        }
+        .question {
+            margin-bottom: 25px;
+        }
+        .checkbox-group, .radio-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .checkbox-group input[type="checkbox"], .radio-group input[type="radio"] {
+            margin-right: 10px;
+            margin-top: 0;
+        }
+        .range-value {
+            margin-top: 10px;
+            font-size: 18px;
+            color: #fff;
+            text-align: center;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #aaa;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="module">
+        <h2>Questionnaire : Sources de distraction</h2>
+        <form action="https://formspree.io/f/xblrnjqo" method="POST">
+
+<!-- Champ caché pour envoyer le nom du module et son numéro -->
+<input type="hidden" name="module" value="Module 1 : Sources de Distraction">
+
+            <!-- Section Nom -->
+            <div class="question">
+                <label for="name">Nom :</label>
+                <input type="text" id="name" name="name" placeholder="Entrez votre nom" required>
+            </div>
+
+            <!-- Question 1 -->
+            <div class="question">
+                <label for="q1">1. Quelles sont les principales sources de distraction dans votre journée ? (Cochez toutes les options pertinentes)</label>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="q1_1" name="q1" value="Téléphone portable">
+                    <label for="q1_1">Téléphone portable (appels, messages, réseaux sociaux)</label>
+                </div>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="q1_2" name="q1" value="Emails">
+                    <label for="q1_2">Emails</label>
+                </div>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="q1_3" name="q1" value="Collègues/famille">
+                    <label for="q1_3">Collègues ou membres de la famille</label>
+                </div>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="q1_4" name="q1" value="Internet/Navigation">
+                    <label for="q1_4">Internet (navigation, vidéos, etc.)</label>
+                </div>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="q1_5" name="q1" value="Bruit environnant">
+                    <label for="q1_5">Bruit environnant</label>
+                </div>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="q1_6" name="q1" value="Autres distractions">
+                    <label for="q1_6">Autres distractions</label>
+                </div>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="question">
+                <label for="q2">2. Parmi ces distractions, laquelle vous affecte le plus ?</label>
+                <div class="radio-group">
+                    <input type="radio" id="q2_1" name="q2" value="Téléphone portable">
+                    <label for="q2_1">Téléphone portable</label>
+                </div>
+                <div class="radio-group">
+                    <input type="radio" id="q2_2" name="q2" value="Emails">
+                    <label for="q2_2">Emails</label>
+                </div>
+                <div class="radio-group">
+                    <input type="radio" id="q2_3" name="q2" value="Collègues/famille">
+                    <label for="q2_3">Collègues ou famille</label>
+                </div>
+                <div class="radio-group">
+                    <input type="radio" id="q2_4" name="q2" value="Internet/Navigation">
+                    <label for="q2_4">Internet</label>
+                </div>
+                <div class="radio-group">
+                    <input type="radio" id="q2_5" name="q2" value="Bruit environnant">
+                    <label for="q2_5">Bruit environnant</label>
+                </div>
+                <div class="radio-group">
+                    <input type="radio" id="q2_6" name="q2" value="Autres distractions">
+                    <label for="q2_6">Autres distractions</label>
+                </div>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="question">
+                <label for="q3">3. Combien de temps passez-vous chaque jour sur votre téléphone portable pour des activités non liées au travail ?</label>
+                <input type="range" id="q3" name="q3" min="0" max="8" step="1" oninput="updateRangeValue('q3', this.value)">
+                <div class="range-value">Heures estimées : <span id="q3-output">4</span></div>
+            </div>
+
+            <!-- Question 4 -->
+            <div class="question">
+                <label for="q4">4. Combien de fois par jour vérifiez-vous vos emails ?</label>
+                <div class="radio-group">
+                    <input type="radio" id="q4_1" name="q4" value="Moins de 5 fois">
+                    <label for="q4_1">Moins de 5 fois</label>
+                </div>
+                <div class="radio-group">
+                    <input type="radio" id="q4_2" name="q4" value="5 à 10 fois">
+                    <label for="q4_2">5 à 10 fois</label>
+                </div>
+                <div class="radio-group">
+                    <input type="radio" id="q4_3" name="q4" value="Plus de 10 fois">
+                    <label for="q4_3">Plus de 10 fois</label>
+                </div>
+            </div>
+
+            <!-- Question 5 -->
+            <div class="question">
+                <label for="q5">5. À quel point ces distractions affectent-elles votre productivité ?</label>
+                <input type="range" id="q5" name="q5" min="1" max="10" value="5" oninput="updateRangeValue('q5', this.value)">
+                <div class="range-value">Impact sur productivité : <span id="q5-output">5</span></div>
+            </div>
+
+            <!-- Question 6 -->
+            <div class="question">
+                <label for="q6">6. Avez-vous des stratégies spécifiques pour éviter ces distractions ?</label>
+                <textarea id="q6" name="q6" rows="4" placeholder="Expliquez vos stratégies..."></textarea>
+            </div>
+
+            <!-- Question 7 -->
+            <div class="question">
+                <label for="q7">7. Quelle est la distraction qui impacte le plus vos pauses ?</label>
+                <div class="radio-group">
+                    <input type="radio" id="q7_1" name="q7" value="Discussions avec collègues">
+                    <label for="q7_1">Discussions avec collègues</label>
+                </div>
+                <div class="radio-group">
+                    <input type="radio" id="q7_2" name="q7" value="Réseaux sociaux">
+                    <label for="q7_2">Réseaux sociaux</label>
+                </div>
+                <div class="radio-group">
+                    <input type="radio" id="q7_3" name="q7" value="Emails personnels">
+                    <label for="q7_3">Emails personnels</label>
+                </div>
+                <div class="radio-group">
+                    <input type="radio" id="q7_4" name="q7" value="Autre">
+                    <label for="q7_4">Autre</label>
+                </div>
+            </div>
+
+            <!-- Question 8 -->
+            <div class="question">
+                <label for="q8">8. Combien de temps perdez-vous chaque jour à cause des distractions ?</label>
+                <select id="q8" name="q8">
+                    <option value="Moins de 30 minutes">Moins de 30 minutes</option>
+                    <option value="30 minutes à 1 heure">30 minutes à 1 heure</option>
+                    <option value="1 à 2 heures">1 à 2 heures</option>
+                    <option value="Plus de 2 heures">Plus de 2 heures</option>
+                </select>
+            </div>
+
+            <!-- Question 9 -->
+            <div class="question">
+                <label for="q9">9. Avez-vous des moments de la journée où les distractions sont plus fortes ?</label>
+                <select id="q9" name="q9">
+                    <option value="Matin">Matin</option>
+                    <option value="Après-midi">Après-midi</option>
+                    <option value="Soir">Soir</option>
+                    <option value="Nuit">Nuit</option>
+                </select>
+            </div>
+
+            <!-- Question 10 -->
+            <div class="question">
+                <label for="q10">10. Quelles suggestions avez-vous pour améliorer votre gestion des distractions ?</label>
+                <textarea id="q10" name="q10" rows="4" placeholder="Partagez vos suggestions ou idées..."></textarea>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="submit-button">
+                <input type="submit" value="Soumettre">
+            </div>
+        </form>
+
+        <div class="footer">
+            <p>Gestion Élite</p>
+        </div>
+    </div>
+
+    <script>
+        function updateRangeValue(question, value) {
+            document.getElementById(`${question}-output`).innerText = value;
+        }
+    </script>
+
+</body>
+</html>
+
+
